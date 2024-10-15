@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Manufacturer Details | Perfume Corner{% endblock %}
+
+{% block content %}
+  <h1>{{ manufacturer.name }}</h1>
+  <p>Country: {{ manufacturer.country }}</p>
+  <ul>
+    <h2>Perfumes by {{ manufacturer.name }}:</h2>
+    {% for perfume in manufacturer.perfumes.all %}
+      <li>{{ perfume.name }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
