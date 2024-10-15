@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Category Details{% endblock %}
+
+{% block content %}
+  <h1>{{ category.name }}</h1>
+  <h3>Perfumes in this category:</h3>
+  <ul>
+    {% for perfume in category.perfumes.all %}
+      <li>{{ perfume.name }} by {{ perfume.manufacturer.name }}</li>
+    {% empty %}
+      <li>No perfumes available in this category.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
