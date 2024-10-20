@@ -1,49 +1,113 @@
+/* General body styling */
 body {
     margin-top: 20px;
+    background-image: url('/static/images/img.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif; /* Clear and readable font */
+    color: #ffffff; /* Default text color for visibility */
+    font-weight: 400; /* Normal font weight */
 }
 
+/* Sidebar navigation */
 .sidebar-nav {
     padding: 0;
     list-style: none;
 }
 
+/* Styling for card elements */
 .card.card-background {
     background-image: url('/static/images/img.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 15px;
-    color: #000000;
+    color: #000000; /* Card text color */
 }
 
-body {
-    background-image: url('/static/images/img.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-}
-
+/* Anchor tag styling */
 a {
-    color: #FFD700;
+    color: #FFD700; /* Gold color for links */
     text-decoration: none;
+    font-weight: 500; /* Slightly bold links */
 }
 
+/* Hover effect for links */
 a:hover {
-    color: #FF4500;
+    color: #FF4500; /* Orange on hover */
     text-decoration: none;
 }
 
+/* Sidebar styling */
 .sidebar {
     background-image: -o-repeating-linear-gradient(-45deg, #FFD700, #FFD700);
     background-size: cover;
     width: 200px;
     background-color: transparent;
     border: none;
-    color: #fff;
+    color: #ffffff; /* Sidebar text color */
+    font-weight: 600; /* Make text in sidebar bold */
 }
 
+/* Sidebar list styling */
 .sidebar ul {
     background: none;
-    color: #ffffff;
+    color: #ffffff; /* Ensure sidebar list text is white */
+    font-weight: 500; /* Medium bold for better readability */
 }
+
+/* Additional styling for footer */
+footer {
+    background-color: #222; /* Dark background for footer */
+    color: #fff; /* White text for visibility */
+    padding: 20px 0;
+    font-size: 14px; /* Smaller font size */
+    text-align: center;
+}
+
+/* Styling for navigation */
+nav {
+    background-color: #333; /* Dark navigation background */
+    color: #fff;
+    font-weight: 600; /* Bold text in navigation */
+}
+
+/* Styling for footer links */
+footer a {
+    color: #FFD700; /* Footer link color */
+    font-weight: 500; /* Medium bold links */
+}
+
+/* Styling for text elements */
+h1, p {
+    color: #FFFFFF; /* White color for better visibility */
+    font-weight: 700; /* Bold font */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Text shadow for better contrast */
+}
+
+.perfume-details {
+    background-color: rgba(0, 0, 0, 0.6); /* Dark transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffffff; /* White text for contrast */
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+
+h1, p {
+    color: #FFFFFF;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Style for centering the image */
+img {
+    max-width: 300px;
+    display: block;
+    margin: 20px auto;
+}
+

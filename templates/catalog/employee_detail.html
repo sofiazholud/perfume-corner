@@ -11,7 +11,11 @@
   {% if employee.favorite_perfumes.all %}
     <ul>
       {% for perfume in employee.favorite_perfumes.all %}
-        <li>{{ perfume.name }} ({{ perfume.manufacturer.name }})</li>
+        <li>
+          <a href="{% url 'catalog:perfume-detail' pk=perfume.id %}">
+            {{ perfume.name }} ({{ perfume.manufacturer.name }})
+          </a>
+        </li>
       {% endfor %}
     </ul>
   {% else %}

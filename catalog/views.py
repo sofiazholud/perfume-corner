@@ -9,7 +9,7 @@ from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from . import forms
 from .models import Perfume, Manufacturer, PerfumeCategory, Employee
 
-from .forms import EmployeeCreationForm, PerfumeSearchForm, PerfumeForm, ManufacturerSearchForm
+from .forms import EmployeeCreationForm, PerfumeSearchForm, PerfumeForm, ManufacturerSearchForm, EmployeeSearchForm
 
 
 @login_required
@@ -119,6 +119,21 @@ class EmployeeListView(LoginRequiredMixin, generic.ListView):
     template_name = "catalog/employee_list.html"
     context_object_name = "employee_list"
     paginate_by = 5
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        search_form = EmployeeSearchForm(self.request.GET or None)
+        context['search_form'] = search_form
+        return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        search_form = EmployeeSearchForm(self.request.GET or None)
+        if search_form.is_valid():
+            if search_form.cleaned_data.get('search'):
+                search_term = search_form.cleaned_data['search']
+                queryset = queryset.filter(first_name__icontains=search_term)
+        return queryset
 
 
 class EmployeeCreateView(LoginRequiredMixin, generic.CreateView):

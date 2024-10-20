@@ -5,12 +5,11 @@
 
 {% block content %}
   <h1>Manufacturer List</h1>
-
   <form method="get" action="" class="form-inline">
       {{ search_form|crispy }}
       <input type="submit" value="🔎" class="btn btn-outline-primary">
   </form>
-  
+
   <ul>
     {% for manufacturer in manufacturer_list %}
       <li>

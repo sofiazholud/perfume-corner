@@ -153,4 +153,4 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

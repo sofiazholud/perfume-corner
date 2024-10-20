@@ -44,3 +44,9 @@ class ManufacturerSearchForm(forms.Form):
             }
         ),
     )
+
+class EmployeeSearchForm(forms.Form):
+    search = forms.CharField(required=False, label='', widget=forms.TextInput(attrs={
+        'placeholder': 'Search by name...',
+        'class': 'form-control'
+    }))
