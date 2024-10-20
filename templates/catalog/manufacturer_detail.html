@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Manufacturer Details | Perfume Corner{% endblock %}
+
+{% block content %}
+  <h1>{{ manufacturer.name }} - {{ manufacturer.country }}</h1>
+  <h2>Perfumes by this manufacturer:</h2>
+
+  <ul>
+    {% for perfume in manufacturer.perfumes.all %}
+      <li>
+        <a href="{% url 'catalog:perfume-detail' pk=perfume.id %}">
+          {{ perfume.name }}
+        </a>
+      </li>
+    {% empty %}
+      <p>No perfumes available for this manufacturer.</p>
+    {% endfor %}
+  </ul>
+<p><a href="{% url 'catalog:manufacturer-list' %}" class="btn btn-primary">Back to Manufacturer List</a></p>  
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Category Details | Perfume Corner{% endblock %}
+
+{% block content %}
+  <h1>{{ category.name }}</h1>
+  <h2>Perfumes in this category:</h2>
+  <ul>
+    {% for perfume in category.perfumes.all %}
+      <li>
+        <a href="{% url 'catalog:perfume-detail' pk=perfume.id %}">
+          {{ perfume.name }} by {{ perfume.manufacturer.name }}
+        </a>
+      </li>
+    {% empty %}
+      <p>No perfumes in this category yet.</p>
+    {% endfor %}
+  </ul>
+{% endblock %}

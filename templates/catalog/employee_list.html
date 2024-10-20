@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+
+{% block title %}Employees | Perfume Corner{% endblock %}
+
+{% block content %}
+  <h1>Employee List</h1>
+  <form method="get" action="" class="form-inline">
+      {{ search_form|crispy }}
+      <input type="submit" value="🔎" class="btn btn-outline-primary">
+  </form>
+  <ul>
+    {% for employee in employee_list %}
+      {% if employee.first_name and employee.last_name %}
+        <li>
+          <a href="{% url 'catalog:employee-detail' pk=employee.id %}">
+            {{ employee.first_name }} {{ employee.last_name }} - {{ employee.position|default:"No position" }}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endblock %}

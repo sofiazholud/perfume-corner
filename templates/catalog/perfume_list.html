@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <h1>Perfume List</h1>
+  <form method="get" action="" class="form-inline">
+      {{ search_form|crispy }}
+      <input type="submit" value="🔎" class="btn btn-outline-primary">
+    </form>
+  
+  {% if perfume_list %}
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Manufacturer</th>
+      <th>Notes</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+    {% for perfume in perfume_list %}
+      <tr>
+        <td>{{ perfume.id }}</td>
+        <td><a href="{% url 'catalog:perfume-detail' pk=perfume.id %}">{{ perfume.name }}</a></td>
+        <td>{{ perfume.category.name }}</td>
+        <td>{{ perfume.manufacturer.name }}</td>
+        <td>{{ perfume.notes }}</td>
+        <td><a href="{% url 'catalog:perfume-update' pk=perfume.id %}">UPDATE</a></td>
+        <td><a href="{% url 'catalog:perfume-delete' pk=perfume.id %}">DELETE</a></td>
+      </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+    <p>No perfumes available</p>
+  {% endif %}
+{% endblock %}
