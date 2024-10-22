@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+
+{% block title %}Category | Perfume Corner{% endblock %}
+
+{% block content %}
+  <h1>Perfume Category List</h1>
+  <ul>
+  {% for category in perfume_category_list %}
+    <li><a href="{% url 'catalog:perfume-category-detail' pk=category.id %}">{{ category.name }}</a></li>
+  {% endfor %}
+  </ul>
+{% endblock %}

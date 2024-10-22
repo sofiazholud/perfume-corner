@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Employee Details{% endblock %}
+
+{% block content %}
+  <h1>{{ employee.first_name }} {{ employee.last_name }}</h1>
+  <p><strong>Username:</strong> {{ employee.username }}</p>
+  <p><strong>Position:</strong> {{ employee.position }}</p>
+  
+  <h2>Favorite Perfumes</h2>
+  {% if employee.favorite_perfumes.all %}
+    <ul>
+      {% for perfume in employee.favorite_perfumes.all %}
+        <li>
+          <a href="{% url 'catalog:perfume-detail' pk=perfume.id %}">
+            {{ perfume.name }} ({{ perfume.manufacturer.name }})
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>This employee has no favorite perfumes listed.</p>
+  {% endif %}
+  
+  <p><a href="{% url 'catalog:employee-list' %}" class="btn btn-primary">Back to Employees List</a></p>
+{% endblock %}
