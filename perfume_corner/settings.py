@@ -28,9 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = os.getenv('DJANGO_DEBUG', '') != 'False'
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -148,7 +147,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'catalog.Employee'
 
-LOGIN_REDIRECT_URL = '/catalog/'
+LOGIN_REDIRECT_URL = '/'
 
 INTERNAL_IPS = [
     '127.0.0.1',
