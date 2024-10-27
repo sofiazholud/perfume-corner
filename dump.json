@@ -1,0 +1,226 @@
+[
+{
+    "model": "catalog.perfumecategory",
+    "pk": 1,
+    "fields": {
+        "name": "Morning fragrances"
+    }
+},
+{
+    "model": "catalog.perfumecategory",
+    "pk": 2,
+    "fields": {
+        "name": "Fresh flavors"
+    }
+},
+{
+    "model": "catalog.perfumecategory",
+    "pk": 3,
+    "fields": {
+        "name": "Evening scents"
+    }
+},
+{
+    "model": "catalog.manufacturer",
+    "pk": 1,
+    "fields": {
+        "name": "Maison Francis Kurkdjian",
+        "country": "France"
+    }
+},
+{
+    "model": "catalog.manufacturer",
+    "pk": 2,
+    "fields": {
+        "name": "Roja Parfums",
+        "country": "France"
+    }
+},
+{
+    "model": "catalog.manufacturer",
+    "pk": 3,
+    "fields": {
+        "name": "Serge Lutens",
+        "country": "France"
+    }
+},
+{
+    "model": "catalog.manufacturer",
+    "pk": 4,
+    "fields": {
+        "name": "Byredo",
+        "country": "Sweden"
+    }
+},
+{
+    "model": "catalog.manufacturer",
+    "pk": 5,
+    "fields": {
+        "name": "Fr├йd├йric Malle",
+        "country": "France"
+    }
+},
+{
+    "model": "catalog.perfume",
+    "pk": 1,
+    "fields": {
+        "name": "Aqua Universalis",
+        "category": 1,
+        "manufacturer": 1,
+        "notes": "It is a light and refreshing fragrance with notes of lemon and flowers that creates an atmosphere of morning freshness.",
+        "image": "images/375x500.66996-removebg-preview_ai2qJFH.png"
+    }
+},
+{
+    "model": "catalog.perfume",
+    "pk": 2,
+    "fields": {
+        "name": "Bal d'Afrique",
+        "category": 1,
+        "manufacturer": 4,
+        "notes": "A fragrance with citrus and floral notes such as neroli and orange, making it ideal for morning use.",
+        "image": "images/dAfrique.png"
+    }
+},
+{
+    "model": "catalog.perfume",
+    "pk": 3,
+    "fields": {
+        "name": "Velvet Haze",
+        "category": 2,
+        "manufacturer": 4,
+        "notes": "It combines coconut water, amber and musk to create a fresh and modern fragrance.",
+        "image": "images/velvet_1_LPh4Vp3.png"
+    }
+},
+{
+    "model": "catalog.perfume",
+    "pk": 4,
+    "fields": {
+        "name": "Aqua Celestia",
+        "category": 2,
+        "manufacturer": 1,
+        "notes": "This fragrance combines notes of lime, mint and black currant to create a feeling of light coolness.",
+        "image": "images/╨в╤Г╨░╨╗╨╡╤В╨╜╨░-╨▓╨╛╨┤╨░-Maison-Kurkdjian-Aqua-Celestia_pdb005W.png"
+    }
+},
+{
+    "model": "catalog.perfume",
+    "pk": 5,
+    "fields": {
+        "name": "Enigma",
+        "category": 3,
+        "manufacturer": 2,
+        "notes": "The combination of vanilla, cognac and amber notes makes this fragrance ideal for evening wear",
+        "image": "images/Enigma_no_1.png"
+    }
+},
+{
+    "model": "catalog.perfume",
+    "pk": 6,
+    "fields": {
+        "name": "Chergui",
+        "category": 3,
+        "manufacturer": 3,
+        "notes": "Warm and sensual aroma with notes of tobacco, honey and spices, creating a feeling of comfort and mystery",
+        "image": "images/Chergui_reoEZ70.png"
+    }
+},
+{
+    "model": "catalog.perfume",
+    "pk": 7,
+    "fields": {
+        "name": "Synthetic Jungle",
+        "category": 3,
+        "manufacturer": 5,
+        "notes": "Combines rich green and floral notes, making it an interesting choice for evening events",
+        "image": "images/syntetic_no1_7p8xgQ1.png"
+    }
+},
+{
+    "model": "catalog.employee",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$ch5kgDUJU931bGa9YNwCg7$pifDtNtRYfHUYF+LJ6ZFa61CTkddVn3MgG9INLmT+xA=",
+        "last_login": "2024-10-23T19:10:56.427Z",
+        "is_superuser": true,
+        "username": "sofia",
+        "first_name": "",
+        "last_name": "",
+        "email": "szholuds@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-10-14T11:37:21.166Z",
+        "position": null,
+        "favorite_perfumes": [],
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "catalog.employee",
+    "pk": 2,
+    "fields": {
+        "password": "Iphone_8",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Max_M",
+        "first_name": "Max",
+        "last_name": "Maximus",
+        "email": "max@maximus.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-10-14T17:16:10Z",
+        "position": "manager",
+        "favorite_perfumes": [
+            5
+        ],
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "catalog.employee",
+    "pk": 3,
+    "fields": {
+        "password": "Iphone_8",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Lolipop",
+        "first_name": "Liza",
+        "last_name": "Kostenko",
+        "email": "loza@kostenko.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-10-15T09:31:56Z",
+        "position": "manager",
+        "favorite_perfumes": [
+            3
+        ],
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "catalog.employee",
+    "pk": 4,
+    "fields": {
+        "password": "Iphone_8",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Undi",
+        "first_name": "Ulyana",
+        "last_name": "Yerow",
+        "email": "uly@yerow.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-10-15T09:32:50Z",
+        "position": "manager",
+        "favorite_perfumes": [
+            2
+        ],
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
