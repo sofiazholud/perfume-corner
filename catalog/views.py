@@ -220,7 +220,7 @@ class PerfumeCategoryListView(LoginRequiredMixin, generic.ListView):
 def test_session_view(request: HttpRequest) -> HttpResponse:
     return HttpResponse(
         '<h1>Test session</h1>',
-        f'<h4>Session data: {request.session['num_visits']}</h4>'
+        f"<h4>Session data: {request.session['num_visits']}</h4>"
     )
 
 
